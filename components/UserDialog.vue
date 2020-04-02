@@ -1,5 +1,5 @@
 <template>
-    <v-dialog v-model="show" persistent max-width="600px">
+    <v-dialog v-model="show" max-width="600px" persistent>
         <v-card>
 
             <v-card-title>
@@ -38,9 +38,10 @@
             </v-card-text>
 
             <v-card-actions>
+                <v-btn v-if="mode === 'edit'" @click="deleteUser" color="red" dark text>Delete</v-btn>
                 <v-spacer></v-spacer>
-                <v-btn color="blue darken-1" text @click="cancel">Cancel</v-btn>
-                <v-btn color="blue darken-1" text @click="ok">{{ mode === 'edit' ? 'Update' : 'Create' }}</v-btn>
+                <v-btn @click="cancel" text>Cancel</v-btn>
+                <v-btn @click.stop="ok" color="primary">{{ mode === 'edit' ? 'Update' : 'Create' }}</v-btn>
             </v-card-actions>
 
         </v-card>
@@ -85,6 +86,11 @@
 
             ok() {
                 this.$emit('ok', this.form);
+                this.resetForm();
+            },
+
+            deleteUser() {
+                this.$emit('deleteUser');
                 this.resetForm();
             },
 
