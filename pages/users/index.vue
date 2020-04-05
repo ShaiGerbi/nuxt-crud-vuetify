@@ -42,6 +42,14 @@
             UserForm, UserDelete,
         },
 
+        
+        computed: {
+            users() {
+                return this.$store.getters['users/getUsers'];
+            }
+        },
+
+
         methods: {
 
             storeUser(event) {
