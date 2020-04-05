@@ -49,6 +49,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+      baseURL: 'https://jsonplaceholder.typicode.com',
   },
   /*
   ** vuetify module configuration
