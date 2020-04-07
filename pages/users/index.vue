@@ -58,9 +58,16 @@
 
         methods: {
 
-            storeUser(event) {
-                this.closeFormDialog();
+            createUser() {
+                this.openFormDialog();
             },
+
+            storeUser(data) {
+                this.$store.dispatch('users/storeUser', data).then(() => {
+                    this.closeFormDialog();
+                });
+            },
+
 
             openFormDialog() {
                 this.dialogs.form = true;

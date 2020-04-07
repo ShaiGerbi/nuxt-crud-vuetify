@@ -4,4 +4,9 @@ export default {
         state.users = data;
     },
 
+
+    addUser(state, user) {
+        state.users.push(user);
+    },
+
 };

@@ -12,4 +12,16 @@ export default {
     },
 
 
+
+    async storeUser({ commit }, data) {
+        await this.$axios
+            .post('/users', data)
+            .then(respond => {
+                if(respond.status === 201) {
+                    commit('addUser', respond.data);
+                }
+            })
+            .catch(error => console.log(error));
+    },
+
 };
