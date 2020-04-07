@@ -11,7 +11,7 @@
 
         <v-card class="mx-auto">
             <v-list>
-                <v-list-item @click="" v-for="user in users" :key="user.id">
+                <v-list-item @click="editUser(user)" v-for="user in users" :key="user.id">
                     <v-list-item-content>
                         <v-list-item-title v-text="user.username"></v-list-item-title>
                     </v-list-item-content>
@@ -61,6 +61,12 @@
             createUser() {
                 this.openFormDialog();
             },
+
+            editUser(user) {
+                this.$store.commit('users/setUser', user);
+                this.openFormDialog();
+            },
+
 
             storeUser(data) {
                 this.$store.dispatch('users/storeUser', data).then(() => {
