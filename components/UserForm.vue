@@ -3,7 +3,7 @@
         <v-card>
 
             <v-card-title>
-                <span class="headline">{{ mode === 'edit' ? 'Edit User' : 'Create User' }}</span>
+                <span class="headline">{{ user.id ? 'Edit User' : 'Create User' }}</span>
             </v-card-title>
 
             <v-card-text>
@@ -38,10 +38,10 @@
             </v-card-text>
 
             <v-card-actions>
-                <v-btn v-if="mode === 'edit'" @click="deleteUser" color="red" dark text>Delete</v-btn>
+                <v-btn v-if="user.id" @click="deleteUser" color="red" dark text>Delete</v-btn>
                 <v-spacer></v-spacer>
                 <v-btn @click="cancel" text>Cancel</v-btn>
-                <v-btn @click.stop="ok" color="primary">{{ mode === 'edit' ? 'Update' : 'Create' }}</v-btn>
+                <v-btn @click.stop="ok" color="primary">{{ user.id ? 'Update' : 'Create' }}</v-btn>
             </v-card-actions>
 
         </v-card>
@@ -52,14 +52,6 @@
     export default {
 
         props: {
-            mode: {
-                type: String,
-                required: true,
-                default: 'create',
-                validator: (value) => {
-                    return ['create', 'edit',].indexOf(value) !== -1;
-                },
-            },
             show: {
                 required: true,
                 default: false,

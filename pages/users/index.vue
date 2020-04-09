@@ -1,7 +1,7 @@
 <template>
     <div>
 
-        <user-form @ok="storeUser" @cancel="closeFormDialog" @deleteUser="openDeleteDialog" :show="dialogs.form" mode="edit"></user-form>
+        <user-form @ok="storeUser" @cancel="closeFormDialog" @deleteUser="openDeleteDialog" :show="dialogs.form"></user-form>
         <user-delete @ok="destroyUser" @cancel="closeDeleteDialog" :show="dialogs.delete"></user-delete>
 
         <v-btn @click="openFormDialog" color="red" dark fab fixed bottom right>
