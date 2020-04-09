@@ -66,13 +66,21 @@
             },
         },
 
+
+        computed: {
+            user() {
+                return {...this.$store.getters['users/getUser']};
+            },
+        },
+
+
         methods: {
             cancel() {
                 this.$emit('cancel');
             },
 
             ok() {
-                this.$emit('ok');
+                this.$emit('ok', this.user);
             },
 
             deleteUser() {
