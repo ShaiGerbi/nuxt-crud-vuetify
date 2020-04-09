@@ -11,25 +11,25 @@
 
                     <v-row>
                         <v-col cols="12" sm="6" md="6">
-                            <v-text-field v-model="form.name" label="Name*" required></v-text-field>
+                            <v-text-field v-model="user.name" label="Name*" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
-                            <v-text-field v-model="form.username" label="Username*" required></v-text-field>
+                            <v-text-field v-model="user.username" label="Username*" required></v-text-field>
                         </v-col>
                     </v-row>
 
                     <v-row>
                         <v-col cols="12">
-                            <v-text-field v-model="form.website" label="Website"></v-text-field>
+                            <v-text-field v-model="user.website" label="Website"></v-text-field>
                         </v-col>
                     </v-row>
 
                     <v-row>
                         <v-col cols="12" sm="6" md="6">
-                            <v-text-field v-model="form.email" label="Email*" required></v-text-field>
+                            <v-text-field v-model="user.email" label="Email*" required></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
-                            <v-text-field v-model="form.phone" label="Phone"></v-text-field>
+                            <v-text-field v-model="user.phone" label="Phone"></v-text-field>
                         </v-col>
                     </v-row>
 
@@ -51,18 +51,6 @@
 <script>
     export default {
 
-        data() {
-            return {
-                form: {
-                    name: '',
-                    username: '',
-                    website: '',
-                    email: '',
-                    phone: '',
-                },
-            }
-        },
-
         props: {
             mode: {
                 type: String,
@@ -81,22 +69,16 @@
         methods: {
             cancel() {
                 this.$emit('cancel');
-                this.resetForm();
             },
 
             ok() {
-                this.$emit('ok', this.form);
-                this.resetForm();
+                this.$emit('ok');
             },
 
             deleteUser() {
                 this.$emit('deleteUser');
-                this.resetForm();
             },
 
-            resetForm() {
-                this.form = {};
-            },
         },
 
     }
