@@ -1,7 +1,7 @@
 export default () => ({
 
-    users: [],
-
     user: {},
+
+    users: [],
 
 });
