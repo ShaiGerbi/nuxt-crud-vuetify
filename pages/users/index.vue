@@ -114,6 +114,17 @@
             },
 
 
+            cancelFormDialog() {
+                this.closeFormDialog();
+                this.endFormLoading();
+            },
+
+            cancelDeleteDialog() {
+                this.closeDeleteDialog();
+                this.endDeleteLoading();
+            },
+
+
             openFormDialog() {
                 this.dialogs.form = true;
             },
