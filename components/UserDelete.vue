@@ -13,7 +13,7 @@
             <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn @click="cancel" text>Cancel</v-btn>
-                <v-btn @click.stop="ok" color="red" text>Delete</v-btn>
+                <v-btn @click.stop="ok" :loading="loading" color="red" text>Delete</v-btn>
             </v-card-actions>
 
         </v-card>
@@ -25,7 +25,14 @@
 
         props: {
             show: {
-                required: true,
+                type: Boolean,
+                required: false,
+                default: false,
+            },
+
+            loading: {
+                type: Boolean,
+                required: false,
                 default: false,
             },
         },

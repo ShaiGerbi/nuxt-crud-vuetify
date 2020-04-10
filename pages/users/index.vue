@@ -1,8 +1,8 @@
 <template>
     <div>
 
-        <user-form @ok="storeUser" @cancel="closeFormDialog" @deleteUser="deleteUser" :show="dialogs.form"></user-form>
-        <user-delete @ok="destroyUser" @cancel="closeDeleteDialog" :show="dialogs.delete"></user-delete>
+        <user-form @ok="storeUser" @cancel="closeFormDialog" @deleteUser="deleteUser" :show="dialogs.form" :loading="loading.form"></user-form>
+        <user-delete @ok="destroyUser" @cancel="closeDeleteDialog" :show="dialogs.delete" :loading="loading.delete"></user-delete>
 
         <v-btn @click="createUser" color="red" dark fab fixed bottom right>
             <v-icon>mdi-plus</v-icon>
@@ -41,6 +41,11 @@
                     form: false,
                     delete: false,
                 },
+
+                loading: {
+                    form: false,
+                    delete: false,
+                },
             }
         },
 
@@ -74,20 +79,26 @@
 
 
             storeUser(data) {
+                this.startFormLoading();
                 this.$store.dispatch('users/storeUser', data).then(() => {
+                    this.endFormLoading();
                     this.closeFormDialog();
                 });
             },
 
             updateUser(user) {
+                this.startFormLoading();
                 this.$store.dispatch('users/updateUser', user).then(() => {
+                    this.endFormLoading();
                     this.closeFormDialog();
                     this.$store.commit('users/resetUser');
                 });
             },
 
             destroyUser() {
+                this.startDeleteLoading();
                 this.$store.dispatch('users/destroyUser').then(() => {
+                    this.endDeleteLoading();
                     this.closeDeleteDialog();
                     this.closeFormDialog();
                     this.$store.commit('users/resetUser');
@@ -110,6 +121,24 @@
 
             closeDeleteDialog() {
                 this.dialogs.delete = false;
+            },
+
+
+            startFormLoading() {
+                this.loading.form = true;
+            },
+
+            endFormLoading() {
+                this.loading.form = false;
+            },
+
+
+            startDeleteLoading() {
+                this.loading.delete = true;
+            },
+
+            endDeleteLoading() {
+                this.loading.delete = false;
             },
 
         },
