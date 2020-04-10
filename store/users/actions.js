@@ -33,4 +33,15 @@ export default {
             .catch(error => console.log(error));
     },
 
+    async destroyUser({ state, commit }) {
+        await this.$axios
+            .delete(`/users/${state.user.id}`)
+            .then(respond => {
+                if(respond.status === 200) {
+                    commit('destroyUser', state.user);
+                }
+            })
+            .catch(error => console.log(error))
+    },
+
 };

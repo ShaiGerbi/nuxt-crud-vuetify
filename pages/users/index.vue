@@ -1,10 +1,10 @@
 <template>
     <div>
 
-        <user-form @ok="storeUser" @cancel="closeFormDialog" @deleteUser="openDeleteDialog" :show="dialogs.form"></user-form>
+        <user-form @ok="storeUser" @cancel="closeFormDialog" @deleteUser="deleteUser" :show="dialogs.form"></user-form>
         <user-delete @ok="destroyUser" @cancel="closeDeleteDialog" :show="dialogs.delete"></user-delete>
 
-        <v-btn @click="openFormDialog" color="red" dark fab fixed bottom right>
+        <v-btn @click="createUser" color="red" dark fab fixed bottom right>
             <v-icon>mdi-plus</v-icon>
         </v-btn>
 
@@ -44,6 +44,7 @@
             }
         },
 
+
         components: {
             UserForm, UserDelete,
         },
@@ -67,6 +68,10 @@
                 this.openFormDialog();
             },
 
+            deleteUser() {
+                this.openDeleteDialog();
+            },
+
 
             storeUser(data) {
                 this.$store.dispatch('users/storeUser', data).then(() => {
@@ -81,6 +86,14 @@
                 });
             },
 
+            destroyUser() {
+                this.$store.dispatch('users/destroyUser').then(() => {
+                    this.closeDeleteDialog();
+                    this.closeFormDialog();
+                    this.$store.commit('users/resetUser');
+                });
+            },
+
 
             openFormDialog() {
                 this.dialogs.form = true;
@@ -90,11 +103,6 @@
                 this.dialogs.form = false;
             },
 
-
-            destroyUser() {
-                this.closeDeleteDialog();
-                this.closeFormDialog();
-            },
 
             openDeleteDialog() {
                 this.dialogs.delete = true;

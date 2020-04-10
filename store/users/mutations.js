@@ -12,11 +12,10 @@ export default {
         state.users = data;
     },
 
-
     addUser(state, user) {
         state.users.push(user);
     },
-    
+
     updateUser(state, data) {
         const user = state.users.find(user => user.id === data.id);
 
@@ -25,6 +24,11 @@ export default {
         user.website  = data.website;
         user.email    = data.email;
         user.phone    = data.phone;
+    },
+
+    destroyUser(state, user) {
+        const index = state.users.indexOf(user);
+        state.users.splice(index, 1);
     },
 
 };
