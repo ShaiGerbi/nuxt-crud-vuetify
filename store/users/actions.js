@@ -11,14 +11,23 @@ export default {
             .catch(error => console.log(error));
     },
 
-
-
     async storeUser({ commit }, data) {
         await this.$axios
             .post('/users', data)
             .then(respond => {
                 if(respond.status === 201) {
                     commit('addUser', respond.data);
+                }
+            })
+            .catch(error => console.log(error));
+    },
+
+    async updateUser({ commit }, user) {
+        await this.$axios
+            .patch(`/users/${user.id}`, user)
+            .then(respond => {
+                if(respond.status === 200) {
+                    commit('updateUser', respond.data);
                 }
             })
             .catch(error => console.log(error));

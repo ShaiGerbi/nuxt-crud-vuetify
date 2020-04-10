@@ -74,6 +74,13 @@
                 });
             },
 
+            updateUser(user) {
+                this.$store.dispatch('users/updateUser', user).then(() => {
+                    this.closeFormDialog();
+                    this.$store.commit('users/resetUser');
+                });
+            },
+
 
             openFormDialog() {
                 this.dialogs.form = true;
