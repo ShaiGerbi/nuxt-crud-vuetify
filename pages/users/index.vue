@@ -1,13 +1,12 @@
 <template>
     <div>
 
-        <user-form @ok="storeUser" @cancel="closeFormDialog" @deleteUser="deleteUser" :show="dialogs.form" :loading="loading.form"></user-form>
-        <user-delete @ok="destroyUser" @cancel="closeDeleteDialog" :show="dialogs.delete" :loading="loading.delete"></user-delete>
+        <user-form @ok="submitUser" @cancel="cancelFormDialog" @deleteUser="deleteUser" :show="dialogs.form" :loading="loading.form"></user-form>
+        <user-delete @ok="destroyUser" @cancel="cancelDeleteDialog" :show="dialogs.delete" :loading="loading.delete"></user-delete>
 
         <v-btn @click="createUser" color="red" dark fab fixed bottom right>
             <v-icon>mdi-plus</v-icon>
         </v-btn>
-
 
         <v-card class="mx-auto">
             <v-list>
@@ -18,7 +17,6 @@
                 </v-list-item>
             </v-list>
         </v-card>
-
 
     </div>
 </template>
@@ -63,6 +61,16 @@
 
 
         methods: {
+
+            submitUser(user) {
+                if(user.id) {
+                    this.updateUser(user);
+                }
+                else {
+                    this.storeUser(user);
+                }
+            },
+
 
             createUser() {
                 this.openFormDialog();
