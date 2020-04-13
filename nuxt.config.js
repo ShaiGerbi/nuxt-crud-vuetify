@@ -30,6 +30,7 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+      { src: '@/plugins/global-components', },
       { src: '@/plugins/vee-validate', },
   ],
   /*
