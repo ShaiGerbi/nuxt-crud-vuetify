@@ -11,25 +11,35 @@
 
                     <v-row>
                         <v-col cols="12" sm="6" md="6">
-                            <v-text-field v-model="user.name" label="Name*" required></v-text-field>
+                                <validation-provider v-slot="{ errors }" rules="required" name="name">
+                                    <v-text-field v-model="user.name" :error-messages="errors" label="Name*" required></v-text-field>
+                                </validation-provider>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
-                            <v-text-field v-model="user.username" label="Username*" required></v-text-field>
+                                <validation-provider v-slot="{ errors }" rules="required" name="username">
+                                    <v-text-field v-model="user.username" :error-messages="errors" label="Username*" required></v-text-field>
+                                </validation-provider>
                         </v-col>
                     </v-row>
 
                     <v-row>
                         <v-col cols="12">
-                            <v-text-field v-model="user.website" label="Website"></v-text-field>
+                                <validation-provider v-slot="{ errors }" rules="" name="website">
+                                    <v-text-field v-model="user.website" :error-messages="errors" label="Website"></v-text-field>
+                                </validation-provider>
                         </v-col>
                     </v-row>
 
                     <v-row>
                         <v-col cols="12" sm="6" md="6">
-                            <v-text-field v-model="user.email" label="Email*" required></v-text-field>
+                                <validation-provider v-slot="{ errors }" rules="required|email" name="email">
+                                    <v-text-field v-model="user.email" :error-messages="errors" label="Email*" required></v-text-field>
+                                </validation-provider>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
-                            <v-text-field v-model="user.phone" label="Phone"></v-text-field>
+                                <validation-provider v-slot="{ errors }" rules="" name="phone">
+                                    <v-text-field v-model="user.phone" :error-messages="errors" label="Phone"></v-text-field>
+                                </validation-provider>
                         </v-col>
                     </v-row>
 
