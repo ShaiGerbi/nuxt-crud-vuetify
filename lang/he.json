@@ -1,0 +1,34 @@
+{
+	"app": {
+		"title": "Users App"
+	},
+	"dialogs": {
+		"buttons": {
+			"cancel": "Cancel",
+			"create": "Create",
+			"delete": "Delete",
+			"update": "Update"
+		},
+		"fields": {
+			"email": "Email",
+			"name": "Name",
+			"phone": "Phone",
+			"username": "Username",
+			"website": "Website"
+		},
+		"strings": {
+			"indicates required field": "* indicates required field",
+			"the deletion is permanent": "The deletion is permanent"
+		},
+		"titles": {
+			"create": "Create User",
+			"delete": "Are you sure?",
+			"edit": "Edit User"
+		}
+	},
+	"errors": {
+		"404 not found": "404 Not Found",
+		"an error occurred": "An error occurred",
+		"home": "Home page"
+	}
+}

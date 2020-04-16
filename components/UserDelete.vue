@@ -3,17 +3,17 @@
         <v-card>
 
             <v-card-title class="headline">
-                Are you sure?
+                {{ $t('dialogs.titles.delete') }}
             </v-card-title>
 
             <v-card-text>
-                The deletion is permanent.
+                {{ $t('dialogs.strings.the deletion is permanent') }}
             </v-card-text>
 
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn @click="cancel" text>Cancel</v-btn>
-                <v-btn @click.stop="ok" :loading="loading" color="red" text>Delete</v-btn>
+                <v-btn @click="cancel" text>{{ $t('dialogs.buttons.cancel') }}</v-btn>
+                <v-btn @click.stop="ok" :loading="loading" color="red" text>{{ $t('dialogs.buttons.delete') }}</v-btn>
             </v-card-actions>
 
         </v-card>

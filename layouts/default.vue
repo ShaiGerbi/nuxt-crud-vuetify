@@ -19,7 +19,7 @@ export default {
 
     data () {
         return {
-            title: 'Users App',
+            title: this.$t('app.title'),
         }
     },
 
