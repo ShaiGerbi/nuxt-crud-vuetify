@@ -1,34 +1,34 @@
 {
 	"app": {
-		"title": "Users App"
+		"title": "אפליקציית משתמשים"
 	},
 	"dialogs": {
 		"buttons": {
-			"cancel": "Cancel",
-			"create": "Create",
-			"delete": "Delete",
-			"update": "Update"
+			"cancel": "בטל",
+			"create": "צור",
+			"delete": "מחק",
+			"update": "עדכון"
 		},
 		"fields": {
-			"email": "Email",
-			"name": "Name",
-			"phone": "Phone",
-			"username": "Username",
-			"website": "Website"
+			"email": "דוא\"ל",
+			"name": "שם",
+			"phone": "טלפון",
+			"username": "שם משתמש",
+			"website": "אתר אינטרנט"
 		},
 		"strings": {
-			"indicates required field": "* indicates required field",
-			"the deletion is permanent": "The deletion is permanent"
+			"indicates required field": "* מציין שדה נדרש",
+			"the deletion is permanent": "המחיקה היא לנצח"
 		},
 		"titles": {
-			"create": "Create User",
-			"delete": "Are you sure?",
-			"edit": "Edit User"
+			"create": "צור משתמש",
+			"delete": "האם אתה בטוח?",
+			"edit": "ערוך משתמש"
 		}
 	},
 	"errors": {
-		"404 not found": "404 Not Found",
-		"an error occurred": "An error occurred",
-		"home": "Home page"
+		"404 not found": "404 לא נמצא",
+		"an error occurred": "התרחשה שגיאה",
+		"home": "דף הבית"
 	}
 }
