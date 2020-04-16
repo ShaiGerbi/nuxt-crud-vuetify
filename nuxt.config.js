@@ -30,8 +30,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-      { src: '@/plugins/global-components', },
-      { src: '@/plugins/vee-validate', },
+    { src: '@/plugins/global-components', },
+    { src: '@/plugins/vee-validate', },
   ],
   /*
   ** Nuxt.js dev-modules
@@ -45,13 +45,16 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+
+    // Doc: https://nuxt-community.github.io/nuxt-i18n
+    'nuxt-i18n',
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-      baseURL: 'https://jsonplaceholder.typicode.com',
+    baseURL: 'https://jsonplaceholder.typicode.com',
   },
   /*
   ** vuetify module configuration
@@ -73,6 +76,21 @@ export default {
         }
       }
     }
+  },
+  /*
+  ** i18n module configuration
+  ** See https://nuxt-community.github.io/nuxt-i18n/options-reference.html
+  */
+  i18n: {
+    defaultLocale: 'en',
+    locales: [
+      { code: 'en', iso: 'en-US', file: 'en.json', },
+      { code: 'he', iso: 'he-IL', file: 'he.json', },
+    ],
+    baseUrl: 'http://localhost:3000',
+    seo: false,
+    lazy: true,
+    langDir: 'lang/',
   },
   /*
   ** Build configuration
