@@ -1,9 +1,7 @@
 <template>
     <v-app>
 
-        <v-app-bar fixed app>
-            <v-toolbar-title v-text="title" />
-        </v-app-bar>
+        <the-header></the-header>
 
         <v-content>
             <v-container>
@@ -15,6 +13,8 @@
 </template>
 
 <script>
+import TheHeader from '@/components/TheHeader';
+
 export default {
 
     data () {
@@ -23,9 +23,12 @@ export default {
         }
     },
 
-
     head() {
         return this.$nuxtI18nSeo();
+    },
+
+    components: {
+        TheHeader,
     },
 
 }
