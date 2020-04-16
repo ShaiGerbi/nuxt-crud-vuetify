@@ -17,11 +17,16 @@
 <script>
 export default {
 
-  data () {
-    return {
-      title: 'Users App',
-    }
-  },
+    data () {
+        return {
+            title: 'Users App',
+        }
+    },
+
+
+    head() {
+        return this.$nuxtI18nSeo();
+    },
 
 }
 </script>
