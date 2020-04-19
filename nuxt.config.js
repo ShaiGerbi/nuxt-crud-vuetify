@@ -49,6 +49,9 @@ export default {
 
     // Doc: https://nuxt-community.github.io/nuxt-i18n
     'nuxt-i18n',
+
+    // Doc: https://pwa.nuxtjs.org
+    '@nuxtjs/pwa',
   ],
   /*
   ** Axios module configuration
@@ -92,6 +95,13 @@ export default {
     seo: false,
     lazy: true,
     langDir: 'lang/',
+  },
+  pwa: {
+    manifest: {
+      name: 'Users App',
+      short_name: 'Users App',
+      theme_color: '#4193c0',
+    },
   },
   /*
   ** Build configuration
