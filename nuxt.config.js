@@ -31,6 +31,7 @@ export default {
   */
   plugins: [
     { src: '@/plugins/global-components', },
+    { src: '@/plugins/i18n', },
     { src: '@/plugins/vee-validate', },
   ],
   /*
