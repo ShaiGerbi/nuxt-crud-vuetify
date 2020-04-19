@@ -1,6 +1,6 @@
 <template>
     <v-dialog v-model="show" max-width="600px" persistent>
-        <validation-observer ref="observer" v-slot="{ handleSubmit, reset }">
+        <validation-observer ref="observer" v-slot="{ handleSubmit }">
             <v-card>
 
                 <v-card-title>
@@ -51,7 +51,7 @@
                 <v-card-actions>
                     <v-btn v-if="user.id" @click="deleteUser" color="red" dark text>{{ $t('dialogs.buttons.delete') }}</v-btn>
                     <v-spacer></v-spacer>
-                    <v-btn @click="reset(cancel)" text>{{ $t('dialogs.buttons.cancel') }}</v-btn>
+                    <v-btn @click="cancel" text>{{ $t('dialogs.buttons.cancel') }}</v-btn>
                     <v-btn @click.stop="handleSubmit(ok)" :loading="loading" color="primary">{{ user.id ? $t('dialogs.buttons.update') : $t('dialogs.buttons.create') }}</v-btn>
                 </v-card-actions>
 
@@ -87,10 +87,12 @@
 
         methods: {
             cancel() {
+                this.$refs.observer.reset();
                 this.$emit('cancel');
             },
 
             ok() {
+                this.$refs.observer.reset();
                 this.$emit('ok', this.user);
             },
 

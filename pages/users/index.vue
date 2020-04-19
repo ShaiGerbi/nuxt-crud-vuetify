@@ -91,6 +91,7 @@
                 this.$store.dispatch('users/storeUser', data).then(() => {
                     this.endFormLoading();
                     this.closeFormDialog();
+                    this.$store.commit('users/resetUser');
                 });
             },
 
@@ -117,6 +118,7 @@
             cancelFormDialog() {
                 this.closeFormDialog();
                 this.endFormLoading();
+                this.$store.commit('users/resetUser');
             },
 
             cancelDeleteDialog() {
