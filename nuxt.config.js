@@ -103,9 +103,6 @@ export default {
       short_name: 'Users App',
       theme_color: '#4193c0',
     },
-    workbox: {
-      offlinePage: '/errors/offline',
-    },
   },
   /*
   ** Build configuration
