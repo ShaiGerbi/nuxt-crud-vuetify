@@ -7,10 +7,12 @@
 			"cancel": "בטל",
 			"create": "צור",
 			"delete": "מחק",
+			"save": "שמור",
 			"update": "עדכון"
 		},
 		"fields": {
 			"email": "דוא\"ל",
+			"languages": "שפות",
 			"name": "שם",
 			"phone": "טלפון",
 			"username": "שם משתמש",
@@ -23,12 +25,17 @@
 		"titles": {
 			"create": "צור משתמש",
 			"delete": "האם אתה בטוח?",
-			"edit": "ערוך משתמש"
+			"edit": "ערוך משתמש",
+			"settings": "הגדרות"
 		}
 	},
 	"errors": {
 		"404 not found": "404 לא נמצא",
 		"an error occurred": "התרחשה שגיאה",
 		"home": "דף הבית"
+	},
+	"languages": {
+		"english": "אנגלית",
+		"hebrew": "עברית"
 	}
 }

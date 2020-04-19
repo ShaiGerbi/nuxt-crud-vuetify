@@ -7,10 +7,12 @@
 			"cancel": "Cancel",
 			"create": "Create",
 			"delete": "Delete",
+			"save": "Save",
 			"update": "Update"
 		},
 		"fields": {
 			"email": "Email",
+			"languages": "Languages",
 			"name": "Name",
 			"phone": "Phone",
 			"username": "Username",
@@ -23,12 +25,17 @@
 		"titles": {
 			"create": "Create User",
 			"delete": "Are you sure?",
-			"edit": "Edit User"
+			"edit": "Edit User",
+			"settings": "Settings"
 		}
 	},
 	"errors": {
 		"404 not found": "404 Not Found",
 		"an error occurred": "An error occurred",
 		"home": "Home page"
+	},
+	"languages": {
+		"english": "English",
+		"hebrew": "Hebrew"
 	}
 }

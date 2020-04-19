@@ -3,14 +3,14 @@
         <v-card>
 
             <v-card-title class="headline">
-                Settings
+                {{ $t('dialogs.titles.settings') }}
             </v-card-title>
 
             <v-card-text>
                 <v-container>
                     <v-row>
                         <v-col cols="12">
-                            <v-select :items="languages" item-text="language" item-value="code" v-model="settings.language" label="Languages"></v-select>
+                            <v-select :items="languages" item-text="title" item-value="code" v-model="settings.language" :label="$t('dialogs.fields.languages')"></v-select>
                         </v-col>
                     </v-row>
                 </v-container>
@@ -18,8 +18,8 @@
 
             <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn @click="cancel" text>Cancel</v-btn>
-                <v-btn @click.stop="ok" color="primary" text>Save</v-btn>
+                <v-btn @click="cancel" text>{{ $t('dialogs.buttons.cancel') }}</v-btn>
+                <v-btn @click.stop="ok" color="primary" text>{{ $t('dialogs.buttons.save') }}</v-btn>
             </v-card-actions>
 
         </v-card>
@@ -31,15 +31,31 @@ export default {
 
     data() {
         return {
-
             settings: {
                 language: this.$i18n.locale,
             },
+        }
+    },
 
-            languages: [
-                { language: 'English', code: 'en', },
-                { language: 'Hebrew', code: 'he', },
-            ],
+
+    computed: {
+        languages() {
+
+            const languagesList = [
+                { title: `${this.$t('languages.english')} - English`, code: 'en', },
+                { title: `${this.$t('languages.hebrew')} - עברית`, code: 'he', },
+            ];
+
+            return languagesList.sort((a, b) => {
+
+                if (a.title < b.title) {
+                    return -1;
+                }
+                if (a.title > b.title) {
+                    return 1;
+                }
+                return 0;
+            });
 
         }
     },
