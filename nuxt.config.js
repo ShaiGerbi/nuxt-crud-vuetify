@@ -33,6 +33,7 @@ export default {
     { src: '@/plugins/global-components', },
     { src: '@/plugins/i18n', },
     { src: '@/plugins/vee-validate', },
+    { src: '@/plugins/vuex-orm-axios', },
   ],
   /*
   ** Nuxt.js dev-modules
