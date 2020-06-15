@@ -24,12 +24,12 @@
 <script>
     import UserForm from '@/components/UserForm';
     import UserDelete from '@/components/UserDelete';
+    import User from '@/models/User';
 
     export default {
 
         mounted() {
-            this.$store.dispatch('users/fetchUsers').then(() => {
-            });
+            User.api().fetchAll();
         },
 
 
@@ -55,7 +55,7 @@
 
         computed: {
             users() {
-                return this.$store.getters['users/getUsers'];
+                return User.all();
             }
         },
 
