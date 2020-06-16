@@ -17,9 +17,15 @@ export default class User extends Model {
 
     static apiConfig = {
         actions: {
+
             fetchAll() {
                 return this.get('users');
             },
+
+            fetchById(id) {
+                return this.get(`users/${id}`);
+            },
+
         },
     };
 
