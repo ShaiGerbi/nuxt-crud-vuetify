@@ -8,7 +8,9 @@ export default {
                     commit('setUsers', respond.data);
                 }
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                commit('common/setError', error.message, { root: true });
+            });
     },
 
     async storeUser({ commit }, data) {
@@ -19,7 +21,9 @@ export default {
                     commit('addUser', respond.data);
                 }
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                commit('common/setError', error.message, { root: true });
+            });
     },
 
     async updateUser({ commit }, user) {
@@ -30,7 +34,9 @@ export default {
                     commit('updateUser', respond.data);
                 }
             })
-            .catch(error => console.log(error));
+            .catch(error => {
+                commit('common/setError', error.message, { root: true });
+            });
     },
 
     async destroyUser({ state, commit }) {
@@ -41,7 +47,9 @@ export default {
                     commit('destroyUser', state.user);
                 }
             })
-            .catch(error => console.log(error))
+            .catch(error => {
+                commit('common/setError', error.message, { root: true });
+            });
     },
 
 };
