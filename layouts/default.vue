@@ -14,8 +14,6 @@
 </template>
 
 <script>
-import TheHeader from '@/components/TheHeader';
-
 export default {
 
     data () {
@@ -32,10 +30,6 @@ export default {
 
     head() {
         return this.$nuxtI18nSeo();
-    },
-
-    components: {
-        TheHeader,
     },
 
 }

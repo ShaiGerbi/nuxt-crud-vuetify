@@ -34,6 +34,8 @@ export default {
     { src: '@/plugins/i18n', },
     { src: '@/plugins/vee-validate', },
   ],
+    // Auto import components: https://go.nuxtjs.dev/config-components
+    components: true,
   /*
   ** Nuxt.js dev-modules
   */

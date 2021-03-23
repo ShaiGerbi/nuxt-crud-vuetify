@@ -15,8 +15,6 @@
 </template>
 
 <script>
-import Settings from '@/components/Settings';
-
 export default {
 
     data () {
@@ -27,10 +25,6 @@ export default {
                 settings: false,
             }
         }
-    },
-
-    components: {
-        Settings,
     },
 
     methods: {

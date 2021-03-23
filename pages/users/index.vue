@@ -22,9 +22,6 @@
 </template>
 
 <script>
-    import UserForm from '@/components/UserForm';
-    import UserDelete from '@/components/UserDelete';
-
     export default {
 
         mounted() {
@@ -45,11 +42,6 @@
                     delete: false,
                 },
             }
-        },
-
-
-        components: {
-            UserForm, UserDelete,
         },
 
 
