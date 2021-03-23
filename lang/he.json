@@ -32,7 +32,8 @@
 	"errors": {
 		"404 not found": "404 לא נמצא",
 		"an error occurred": "התרחשה שגיאה",
-		"home": "דף הבית"
+		"home": "דף הבית",
+		"no data found": "לא נימצאו נתונים"
 	},
 	"languages": {
 		"english": "אנגלית",

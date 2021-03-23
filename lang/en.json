@@ -32,7 +32,8 @@
 	"errors": {
 		"404 not found": "404 Not Found",
 		"an error occurred": "An error occurred",
-		"home": "Home page"
+		"home": "Home page",
+		"no data found": "No data found"
 	},
 	"languages": {
 		"english": "English",

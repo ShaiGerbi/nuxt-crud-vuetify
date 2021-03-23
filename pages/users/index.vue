@@ -8,7 +8,7 @@
             <v-icon>mdi-plus</v-icon>
         </v-btn>
 
-        <v-card class="mx-auto">
+        <v-card v-if="users.length" class="mx-auto">
             <v-list>
                 <v-list-item @click="editUser(user)" v-for="user in users" :key="user.id">
                     <v-list-item-content>
@@ -17,6 +17,8 @@
                 </v-list-item>
             </v-list>
         </v-card>
+
+        <v-alert v-else type="info" dark>{{ $t('errors.no data found') }}</v-alert>
 
     </div>
 </template>
