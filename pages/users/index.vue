@@ -1,21 +1,23 @@
 <template>
     <div>
 
-        <user-form @ok="submitUser" @cancel="cancelFormDialog" @deleteUser="deleteUser" :show="dialogs.form" :loading="loading.form"></user-form>
-        <user-delete @ok="destroyUser" @cancel="cancelDeleteDialog" :show="dialogs.delete" :loading="loading.delete"></user-delete>
+        <user-form @ok="submitUser" @cancel="cancelFormDialog" @deleteUser="deleteUser" :show="dialogs.form" :loading="loadingForm"></user-form>
+        <user-delete @ok="destroyUser" @cancel="cancelDeleteDialog" :show="dialogs.delete" :loading="loadingDelete"></user-delete>
 
         <v-btn @click="createUser" color="red" dark fab fixed bottom right>
             <v-icon>mdi-plus</v-icon>
         </v-btn>
 
         <v-card v-if="users.length" class="mx-auto">
-            <v-list>
-                <v-list-item @click="editUser(user)" v-for="user in users" :key="user.id">
-                    <v-list-item-content>
-                        <v-list-item-title v-text="user.username"></v-list-item-title>
-                    </v-list-item-content>
-                </v-list-item>
-            </v-list>
+            <v-skeleton-loader :loading="loadingData" type="list-item@5" class="mx-auto">
+                <v-list>
+                    <v-list-item @click="editUser(user)" v-for="user in users" :key="user.id">
+                        <v-list-item-content>
+                            <v-list-item-title v-text="user.username"></v-list-item-title>
+                        </v-list-item-content>
+                    </v-list-item>
+                </v-list>
+            </v-skeleton-loader>
         </v-card>
 
         <v-alert v-else type="info" dark>{{ $t('errors.no data found') }}</v-alert>
@@ -38,11 +40,6 @@
                     form: false,
                     delete: false,
                 },
-
-                loading: {
-                    form: false,
-                    delete: false,
-                },
             }
         },
 
@@ -50,7 +47,19 @@
         computed: {
             users() {
                 return this.$store.getters['users/getUsers'];
-            }
+            },
+
+            loadingData() {
+                return this.$store.getters['common/getLoadingData'];
+            },
+
+            loadingForm() {
+                return this.$store.getters['common/getLoadingForm'];
+            },
+
+            loadingDelete() {
+                return this.$store.getters['common/getLoadingDelete'];
+            },
         },
 
 
@@ -81,27 +90,21 @@
 
 
             storeUser(data) {
-                this.startFormLoading();
                 this.$store.dispatch('users/storeUser', data).then(() => {
-                    this.endFormLoading();
                     this.closeFormDialog();
                     this.$store.commit('users/resetUser');
                 });
             },
 
             updateUser(user) {
-                this.startFormLoading();
                 this.$store.dispatch('users/updateUser', user).then(() => {
-                    this.endFormLoading();
                     this.closeFormDialog();
                     this.$store.commit('users/resetUser');
                 });
             },
 
             destroyUser() {
-                this.startDeleteLoading();
                 this.$store.dispatch('users/destroyUser').then(() => {
-                    this.endDeleteLoading();
                     this.closeDeleteDialog();
                     this.closeFormDialog();
                     this.$store.commit('users/resetUser');
@@ -111,13 +114,11 @@
 
             cancelFormDialog() {
                 this.closeFormDialog();
-                this.endFormLoading();
                 this.$store.commit('users/resetUser');
             },
 
             cancelDeleteDialog() {
                 this.closeDeleteDialog();
-                this.endDeleteLoading();
             },
 
 
@@ -137,25 +138,6 @@
             closeDeleteDialog() {
                 this.dialogs.delete = false;
             },
-
-
-            startFormLoading() {
-                this.loading.form = true;
-            },
-
-            endFormLoading() {
-                this.loading.form = false;
-            },
-
-
-            startDeleteLoading() {
-                this.loading.delete = true;
-            },
-
-            endDeleteLoading() {
-                this.loading.delete = false;
-            },
-
         },
 
     }
