@@ -3,12 +3,12 @@
 
         <the-header></the-header>
 
-        <v-content>
+        <v-main>
             <v-container>
                 <v-alert v-if="error" type="error" dark>{{ error }}</v-alert>
                 <nuxt />
             </v-container>
-        </v-content>
+        </v-main>
 
     </v-app>
 </template>
