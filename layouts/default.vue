@@ -6,6 +6,7 @@
         <v-main>
             <v-container>
                 <v-alert v-if="error" type="error" dark>{{ error }}</v-alert>
+                <offline></offline>
                 <nuxt />
             </v-container>
         </v-main>
