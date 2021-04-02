@@ -33,7 +33,8 @@
 		"404 not found": "404 Not Found",
 		"an error occurred": "An error occurred",
 		"home": "Home page",
-		"no data found": "No data found"
+		"no data found": "No data found",
+		"no internet connection": "No Internet Connection"
 	},
 	"languages": {
 		"english": "English",

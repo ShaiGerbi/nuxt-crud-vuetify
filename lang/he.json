@@ -33,7 +33,8 @@
 		"404 not found": "404 לא נמצא",
 		"an error occurred": "התרחשה שגיאה",
 		"home": "דף הבית",
-		"no data found": "לא נימצאו נתונים"
+		"no data found": "לא נימצאו נתונים",
+        "no internet connection": "אין חיבור לאינטרנט"
 	},
 	"languages": {
 		"english": "אנגלית",

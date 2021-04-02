@@ -6,7 +6,7 @@
         <v-main>
             <v-container>
                 <v-alert v-if="error" type="error" dark>{{ error }}</v-alert>
-                <offline></offline>
+                <offline :message="$t('errors.no internet connection')"></offline>
                 <nuxt />
             </v-container>
         </v-main>
