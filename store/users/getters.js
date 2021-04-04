@@ -1,11 +1,11 @@
 export default {
 
-    getUser(state) {
-        return state.user;
-    },
+  getUser (state) {
+    return state.user
+  },
 
-    getUsers(state) {
-        return state.users;
-    },
+  getUsers (state) {
+    return state.users
+  }
 
-};
+}

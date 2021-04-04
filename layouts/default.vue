@@ -1,37 +1,39 @@
 <template>
-    <v-app>
+  <v-app>
 
-        <the-header></the-header>
+    <the-header></the-header>
 
-        <v-main>
-            <v-container>
-                <v-alert v-if="error" type="error" dark>{{ error }}</v-alert>
-                <offline :message="$t('errors.no internet connection')"></offline>
-                <nuxt />
-            </v-container>
-        </v-main>
+    <v-main>
+      <v-container>
+        <v-alert v-if="error" type="error" dark>
+          {{ error }}
+        </v-alert>
+        <offline :message="$t('errors.no internet connection')"></offline>
+        <nuxt />
+      </v-container>
+    </v-main>
 
-    </v-app>
+  </v-app>
 </template>
 
 <script>
 export default {
 
-    data () {
-        return {
-            title: this.$t('app.title'),
-        }
-    },
+  data () {
+    return {
+      title: this.$t('app.title')
+    }
+  },
 
-    computed: {
-        error() {
-            return this.$store.getters['common/getError'];
-        }
-    },
+  head () {
+    return this.$nuxtI18nSeo()
+  },
 
-    head() {
-        return this.$nuxtI18nSeo();
-    },
+  computed: {
+    error () {
+      return this.$store.getters['common/getError']
+    }
+  }
 
 }
 </script>

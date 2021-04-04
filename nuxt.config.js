@@ -29,19 +29,19 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '@/plugins/global-components', },
-    { src: '@/plugins/i18n', },
-    { src: '@/plugins/vee-validate', },
+    { src: '@/plugins/global-components' },
+    { src: '@/plugins/i18n' },
+    { src: '@/plugins/vee-validate' }
   ],
-    // Auto import components: https://go.nuxtjs.dev/config-components
-    components: true,
+  // Auto import components: https://go.nuxtjs.dev/config-components
+  components: true,
   /*
   ** Nuxt.js dev-modules
   */
   buildModules: [
     // https://go.nuxtjs.dev/eslint
     '@nuxtjs/eslint-module',
-    '@nuxtjs/vuetify',
+    '@nuxtjs/vuetify'
   ],
   /*
   ** Nuxt.js modules
@@ -54,14 +54,14 @@ export default {
     'nuxt-i18n',
 
     // Doc: https://pwa.nuxtjs.org
-    '@nuxtjs/pwa',
+    '@nuxtjs/pwa'
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
-    baseURL: 'https://jsonplaceholder.typicode.com',
+    baseURL: 'https://jsonplaceholder.typicode.com'
   },
   /*
   ** vuetify module configuration
@@ -91,27 +91,27 @@ export default {
   i18n: {
     defaultLocale: 'en',
     locales: [
-      { code: 'en', iso: 'en-US', file: 'en.json', },
-      { code: 'he', iso: 'he-IL', file: 'he.json', },
+      { code: 'en', iso: 'en-US', file: 'en.json' },
+      { code: 'he', iso: 'he-IL', file: 'he.json' }
     ],
     baseUrl: 'http://localhost:3000',
     seo: false,
     lazy: true,
-    langDir: 'lang/',
+    langDir: 'lang/'
   },
   pwa: {
     manifest: {
       name: 'Users App',
       short_name: 'Users App',
-      theme_color: '#4193c0',
-    },
+      theme_color: '#4193c0'
+    }
   },
   /*
   ** Build configuration
   */
   build: {
     transpile: [
-      "vee-validate/dist/rules",
+      'vee-validate/dist/rules'
     ],
     /*
     ** You can extend webpack config here

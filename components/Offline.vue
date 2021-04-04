@@ -8,19 +8,19 @@
 </template>
 
 <script>
-  export default {
-    name: 'Offline',
+export default {
+  name: 'Offline',
 
-    props: {
-      message: {
-        type: String,
-        required: false,
-        default: 'No Internet Connection',
-      },
-      timeout: {
-        required: false,
-        default: -1,
-      },
+  props: {
+    message: {
+      type: String,
+      required: false,
+      default: 'No Internet Connection'
+    },
+    timeout: {
+      required: false,
+      default: -1
     }
   }
+}
 </script>
