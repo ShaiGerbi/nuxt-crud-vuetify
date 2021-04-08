@@ -5,11 +5,11 @@
 
     <v-spacer></v-spacer>
 
-    <v-btn icon @click="openSettingsDialog">
+    <v-btn icon @click="dialogs.settings = true">
       <v-icon>mdi-cog</v-icon>
     </v-btn>
 
-    <settings :show="dialogs.settings" @ok="saveSettings" @cancel="cancelSettingsDialog"></settings>
+    <settings :show="dialogs.settings" @ok="saveSettings" @cancel="dialogs.settings = false"></settings>
 
   </v-app-bar>
 </template>
@@ -30,18 +30,6 @@ export default {
   methods: {
     saveSettings (settings) {
       this.$i18n.setLocale(settings.language)
-      this.closeSettingsDialog()
-    },
-
-    cancelSettingsDialog () {
-      this.closeSettingsDialog()
-    },
-
-    openSettingsDialog () {
-      this.dialogs.settings = true
-    },
-
-    closeSettingsDialog () {
       this.dialogs.settings = false
     }
   }
