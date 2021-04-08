@@ -8,8 +8,8 @@ export default {
     state.loading_data = loading
   },
 
-  setLoadingForm (state, loading) {
-    state.loading_form = loading
+  setLoadingDialog (state, loading) {
+    state.loading_dialog = loading
   },
 
   setLoadingDelete (state, loading) {

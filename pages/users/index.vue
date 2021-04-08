@@ -1,8 +1,8 @@
 <template>
   <div>
 
-    <user-form :show="dialogs.form" :loading="loadingForm" @ok="submitUser" @cancel="cancelFormDialog" @deleteUser="deleteUser"></user-form>
-    <user-delete :show="dialogs.delete" :loading="loadingDelete" @ok="destroyUser" @cancel="cancelDeleteDialog"></user-delete>
+    <user-dialog :show="dialogs.user" :loading="loadingDialog" @ok="submitUser" @cancel="cancelUserDialog" @deleteUser="deleteUser"></user-dialog>
+    <delete-dialog :show="dialogs.delete" :loading="loadingDelete" @ok="destroyUser" @cancel="cancelDeleteDialog"></delete-dialog>
 
     <v-btn color="red" fixed dark fab right bottom @click="createUser">
       <v-icon>mdi-plus</v-icon>
@@ -37,7 +37,7 @@ export default {
   data () {
     return {
       dialogs: {
-        form: false,
+        user: false,
         delete: false
       }
     }
@@ -52,8 +52,8 @@ export default {
       return this.$store.getters['common/getLoadingData']
     },
 
-    loadingForm () {
-      return this.$store.getters['common/getLoadingForm']
+    loadingDialog () {
+      return this.$store.getters['common/getLoadingDialog']
     },
 
     loadingDelete () {
@@ -78,12 +78,12 @@ export default {
     },
 
     createUser () {
-      this.openFormDialog()
+      this.openUserDialog()
     },
 
     editUser (user) {
       this.$store.commit('users/setUser', user)
-      this.openFormDialog()
+      this.openUserDialog()
     },
 
     deleteUser () {
@@ -92,14 +92,14 @@ export default {
 
     storeUser (data) {
       this.$store.dispatch('users/storeUser', data).then(() => {
-        this.closeFormDialog()
+        this.closeUserDialog()
         this.$store.commit('users/resetUser')
       })
     },
 
     updateUser (user) {
       this.$store.dispatch('users/updateUser', user).then(() => {
-        this.closeFormDialog()
+        this.closeUserDialog()
         this.$store.commit('users/resetUser')
       })
     },
@@ -107,13 +107,13 @@ export default {
     destroyUser () {
       this.$store.dispatch('users/destroyUser').then(() => {
         this.closeDeleteDialog()
-        this.closeFormDialog()
+        this.closeUserDialog()
         this.$store.commit('users/resetUser')
       })
     },
 
-    cancelFormDialog () {
-      this.closeFormDialog()
+    cancelUserDialog () {
+      this.closeUserDialog()
       this.$store.commit('users/resetUser')
     },
 
@@ -121,12 +121,12 @@ export default {
       this.closeDeleteDialog()
     },
 
-    openFormDialog () {
-      this.dialogs.form = true
+    openUserDialog () {
+      this.dialogs.user = true
     },
 
-    closeFormDialog () {
-      this.dialogs.form = false
+    closeUserDialog () {
+      this.dialogs.user = false
     },
 
     openDeleteDialog () {
