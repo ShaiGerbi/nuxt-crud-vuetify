@@ -62,8 +62,7 @@ export default {
   },
 
   mounted () {
-    this.$store.dispatch('users/fetchUsers').then(() => {
-    })
+    this.$store.dispatch('users/fetchUsers')
   },
 
   methods: {
