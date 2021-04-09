@@ -4,6 +4,10 @@ export default {
     state.error = error
   },
 
+  resetError (state) {
+    state.error = null
+  },
+
   setLoadingData (state, loading) {
     state.loading_data = loading
   },

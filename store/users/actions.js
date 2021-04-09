@@ -7,6 +7,7 @@ export default {
       .then((respond) => {
         if (respond.status === 200) {
           commit('setUsers', respond.data)
+          commit('common/resetError', null, { root: true })
         }
       })
       .catch((error) => {
@@ -24,6 +25,7 @@ export default {
       .then((respond) => {
         if (respond.status === 201) {
           commit('addUser', respond.data)
+          commit('common/resetError', null, { root: true })
         }
       })
       .catch((error) => {
@@ -41,6 +43,7 @@ export default {
       .then((respond) => {
         if (respond.status === 200) {
           commit('updateUser', respond.data)
+          commit('common/resetError', null, { root: true })
         }
       })
       .catch((error) => {
@@ -58,6 +61,7 @@ export default {
       .then((respond) => {
         if (respond.status === 200) {
           commit('destroyUser', state.user)
+          commit('common/resetError', null, { root: true })
         }
       })
       .catch((error) => {
