@@ -13,6 +13,7 @@
 		"fields": {
 			"email": "Email",
 			"languages": "Languages",
+			"theme": "Theme",
 			"name": "Name",
 			"phone": "Phone",
 			"username": "Username",
@@ -39,5 +40,9 @@
 	"languages": {
 		"english": "English",
 		"hebrew": "Hebrew"
+	},
+	"themes": {
+		"light": "Light",
+		"dark": "Dark"
 	}
 }

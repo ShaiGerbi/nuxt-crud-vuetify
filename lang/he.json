@@ -13,6 +13,7 @@
 		"fields": {
 			"email": "דוא\"ל",
 			"languages": "שפות",
+			"theme": "ערכת נושא",
 			"name": "שם",
 			"phone": "טלפון",
 			"username": "שם משתמש",
@@ -39,5 +40,9 @@
 	"languages": {
 		"english": "אנגלית",
 		"hebrew": "עברית"
+	},
+	"themes": {
+		"light": "בהיר",
+		"dark": "כהה"
 	}
 }

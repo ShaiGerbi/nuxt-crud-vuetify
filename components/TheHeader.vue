@@ -30,6 +30,7 @@ export default {
   methods: {
     saveSettings (settings) {
       this.$i18n.setLocale(settings.language)
+      this.$vuetify.theme.dark = settings.theme
       this.dialogs.settings = false
     }
   }

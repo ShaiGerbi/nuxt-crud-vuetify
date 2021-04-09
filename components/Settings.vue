@@ -8,11 +8,19 @@
 
       <v-card-text>
         <v-container>
+
           <v-row>
             <v-col cols="12">
               <v-select v-model="settings.language" :items="languages" item-text="title" item-value="code" :label="$t('dialogs.fields.languages')"></v-select>
             </v-col>
           </v-row>
+
+          <v-row>
+            <v-col cols="12">
+              <v-select v-model="settings.theme" :items="themes" item-text="title" item-value="value" :label="$t('dialogs.fields.theme')"></v-select>
+            </v-col>
+          </v-row>
+
         </v-container>
       </v-card-text>
 
@@ -44,7 +52,8 @@ export default {
   data () {
     return {
       settings: {
-        language: this.$i18n.locale
+        language: this.$i18n.locale,
+        theme: this.$vuetify.theme.dark
       }
     }
   },
@@ -65,6 +74,13 @@ export default {
         }
         return 0
       })
+    },
+
+    themes () {
+      return [
+        { title: this.$t('themes.dark'), value: true },
+        { title: this.$t('themes.light'), value: false }
+      ]
     }
   },
 
