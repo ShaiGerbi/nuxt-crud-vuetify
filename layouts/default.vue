@@ -5,7 +5,7 @@
 
     <v-main>
       <v-container>
-        <v-alert v-if="error" type="error" dark>
+        <v-alert v-if="error" type="error">
           {{ error }}
         </v-alert>
         <offline :message="$t('errors.no internet connection')"></offline>

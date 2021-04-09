@@ -51,7 +51,7 @@
         </v-card-text>
 
         <v-card-actions>
-          <v-btn v-if="user.id" dark color="red" text @click="deleteUser">
+          <v-btn v-if="user.id" color="red" text @click="deleteUser">
             {{ $t('dialogs.buttons.delete') }}
           </v-btn>
           <v-spacer></v-spacer>
