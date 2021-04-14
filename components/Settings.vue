@@ -91,6 +91,8 @@ export default {
 
     ok () {
       this.$emit('ok', this.settings)
+      this.$i18n.setLocale(this.settings.language)
+      this.$vuetify.theme.dark = this.settings.theme
     }
   }
 

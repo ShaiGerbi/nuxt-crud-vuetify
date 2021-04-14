@@ -9,7 +9,7 @@
       <v-icon>mdi-cog</v-icon>
     </v-btn>
 
-    <settings :show="dialogs.settings" @ok="saveSettings" @cancel="dialogs.settings = false"></settings>
+    <settings :show="dialogs.settings" @ok="dialogs.settings = false" @cancel="dialogs.settings = false"></settings>
 
   </v-app-bar>
 </template>
@@ -24,14 +24,6 @@ export default {
       dialogs: {
         settings: false
       }
-    }
-  },
-
-  methods: {
-    saveSettings (settings) {
-      this.$i18n.setLocale(settings.language)
-      this.$vuetify.theme.dark = settings.theme
-      this.dialogs.settings = false
     }
   }
 
