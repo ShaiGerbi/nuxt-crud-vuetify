@@ -1,5 +1,5 @@
 <template>
-  <v-snackbar v-model="$nuxt.isOffline" :timeout="timeout">
+  <v-snackbar v-model="$nuxt.isOffline" timeout="-1">
     <v-icon left>
       mdi-wifi-off
     </v-icon>
@@ -16,10 +16,6 @@ export default {
       type: String,
       required: false,
       default: 'No Internet Connection'
-    },
-    timeout: {
-      required: false,
-      default: -1
     }
   }
 }
