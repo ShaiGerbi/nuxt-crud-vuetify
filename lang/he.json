@@ -8,7 +8,8 @@
 			"create": "צור",
 			"delete": "מחק",
 			"save": "שמור",
-			"update": "עדכון"
+			"update": "עדכון",
+			"login": "התחברות"
 		},
 		"fields": {
 			"email": "דוא\"ל",
@@ -17,6 +18,7 @@
 			"name": "שם",
 			"phone": "טלפון",
 			"username": "שם משתמש",
+			"password": "סיסמה",
 			"website": "אתר אינטרנט"
 		},
 		"strings": {
@@ -27,7 +29,8 @@
 			"create": "צור משתמש",
 			"delete": "האם אתה בטוח?",
 			"edit": "ערוך משתמש",
-			"settings": "הגדרות"
+			"settings": "הגדרות",
+			"login": "התחברות"
 		}
 	},
 	"errors": {
@@ -35,7 +38,8 @@
 		"an error occurred": "התרחשה שגיאה",
 		"home": "דף הבית",
 		"no data found": "לא נימצאו נתונים",
-        "no internet connection": "אין חיבור לאינטרנט"
+        "no internet connection": "אין חיבור לאינטרנט",
+        "username or password in incorrect": "שם המשתמש או הסיסמה שגויים"
 	},
 	"languages": {
 		"english": "אנגלית",

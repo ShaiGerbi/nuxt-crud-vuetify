@@ -18,6 +18,7 @@ localize({
     names: {
       name: 'Name',
       username: 'Username',
+      password: 'Password',
       website: 'Website',
       email: 'Email',
       phone: 'Phone'
@@ -27,6 +28,7 @@ localize({
     names: {
       name: 'שם',
       username: 'שם משתמש',
+      password: 'סיסמה',
       website: 'אתר',
       email: 'דוא"ל',
       phone: 'טלפון'

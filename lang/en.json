@@ -8,7 +8,8 @@
 			"create": "Create",
 			"delete": "Delete",
 			"save": "Save",
-			"update": "Update"
+			"update": "Update",
+			"login": "Login"
 		},
 		"fields": {
 			"email": "Email",
@@ -17,6 +18,7 @@
 			"name": "Name",
 			"phone": "Phone",
 			"username": "Username",
+			"password": "Password",
 			"website": "Website"
 		},
 		"strings": {
@@ -27,7 +29,8 @@
 			"create": "Create User",
 			"delete": "Are you sure?",
 			"edit": "Edit User",
-			"settings": "Settings"
+			"settings": "Settings",
+			"login": "Login"
 		}
 	},
 	"errors": {
@@ -35,7 +38,8 @@
 		"an error occurred": "An error occurred",
 		"home": "Home page",
 		"no data found": "No data found",
-		"no internet connection": "No Internet Connection"
+		"no internet connection": "No Internet Connection",
+		"username or password in incorrect": "Username or Password in incorrect"
 	},
 	"languages": {
 		"english": "English",
