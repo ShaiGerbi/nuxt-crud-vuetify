@@ -47,6 +47,9 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    // Doc: https://auth.nuxtjs.org
+    '@nuxtjs/auth-next',
+
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
 
@@ -56,6 +59,17 @@ export default {
     // Doc: https://pwa.nuxtjs.org
     '@nuxtjs/pwa'
   ],
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/auth/login', method: 'post' },
+          logout: { url: '/api/auth/logout', method: 'post' },
+          user: { url: '/api/auth/user', method: 'get' }
+        }
+      }
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
